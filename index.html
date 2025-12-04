@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼성, B-Side로 새롭게</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+    <header class="global-header">
+        <div class="logo" style="cursor:pointer;" onclick="location.reload()">SAMSUNG</div>
+        <nav class="top-nav">
+            <a href="#" data-page="play">PLAY</a>
+            <a href="#" data-page="archive">ARCHIVE</a>
+            <a href="#" data-page="recipe">MY_GALAXY_RECIPE</a>
+            <a href="#" data-page="space">SPACE</a>
+        </nav>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" placeholder="검색...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <a href="#" class="samsung-link">SAMSUNG.com</a>
+            <div class="icon-user">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="8" r="4" stroke="white" stroke-width="2"/>
+                    <path d="M4 20C4 16 8 16 12 16C16 16 20 16 20 20" stroke="white" stroke-width="2"/>
+                </svg>
+            </div>
+            <div class="icon-menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="2"/>
+                    <line x1="3" y1="12" x2="21" y2="12" stroke="white" stroke-width="2"/>
+                    <line x1="3" y1="18" x2="21" y2="18" stroke="white" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <nav class="scroll-indicator">
+        <ul>
+            <li class="active" data-target="hero">
+                <span class="label">B-Side</span>
+                <span class="dot"></span>
+            </li>
+            <li data-target="whatif">
+                <span class="label">WhatIF?</span>
+                <span class="dot"></span>
+            </li>
+            <li data-target="makers-log">
+                <span class="label">Makers Log</span>
+                <span class="dot"></span>
+            </li>
+            <li data-target="tech-tock">
+                <span class="label">Tech Tock</span>
+                <span class="dot"></span>
+            </li>
+            <li data-target="ai-play">
+                <span class="label">AI Play</span>
+                <span class="dot"></span>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home / B-Side Page -->
+        <div id="page-home" class="page active">
+            <!-- Mobile Home View -->
+            <div class="mobile-home-view">
+                <div class="mobile-header-top">
+                    <div class="logo">SAMSUNG NowHere</div>
+                    <div class="actions">
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </span>
+                        <span class="icon user-profile">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="greeting-section">
+                    <h2>카레카레님,<br>오늘은 어떤 여정을 도와드릴까요?</h2>
+                </div>
+
+                <div class="mobile-search-bar">
+                    <div class="search-icon-circle" id="mobile-search-btn" style="cursor: pointer;">✦</div>
+                    <input type="text" id="mobile-search-input" placeholder="무엇이든 묻거나, 검색하거나, 제안해주세요">
+                </div>
+
+                <div class="mobile-menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/기술톡.png" alt="기술톡">
+                        </div>
+                        <span>기술톡</span>
+                    </div>
+                    <div class="menu-item" onclick="document.querySelector('[data-page=play]').click()">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/ai플레이.png" alt="AI PLAY">
+                        </div>
+                        <span>AI PLAY</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/B-side.png" alt="B-side">
+                        </div>
+                        <span>B-side</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/왓이프.png" alt="왓이프">
+                        </div>
+                        <span>왓이프</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/삼성로그.png" alt="삼성로그">
+                        </div>
+                        <span>삼성로그</span>
+                    </div>
+                    <div class="menu-item" onclick="document.querySelector('[data-page=recipe]').click()">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/레시피.png" alt="Pro's Recipe">
+                        </div>
+                        <span>Pro's Recipe</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/스타일매치.png" alt="스타일매치">
+                        </div>
+                        <span>스타일매치</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon-circle">
+                            <img src="images/ico/이벤트.png" alt="이벤트">
+                        </div>
+                        <span>이벤트</span>
+                    </div>
+                </div>
+
+                <div class="my-activity-section">
+                    <h3>내 활동</h3>
+                    <div class="activity-scroll">
+                        <div class="activity-card">
+                            <div class="card-label">최근 탐색 기록</div>
+                            <div class="card-content">
+                                <span class="icon">🕒</span>
+                                <span class="text">최근에 스마트전구를 검색하셨어요.</span>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <div class="card-label">오늘의 미션</div>
+                            <div class="card-content">
+                                <span class="icon">🎒</span>
+                                <span class="text">스타일 매치 참여하기</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="hero" class="section hero desktop-only">
+                
+                <div class="hero-content">
+                    <div class="logo-icon">
+                        <!-- Placeholder for the X icon in the design -->
+                        <div class="x-shape"></div>
+                    </div>
+                    <h1>SAMSUNG, B-Side.</h1>
+                    <p class="subtitle">오직 S-LAB(가칭)에서만 공개하는 솔직한 이야기.</p>
+                    
+                    <button class="enter-btn">
+                        Enter B-Side
+                        <span class="arrow-right"></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Placeholder for WhatIF section if needed, or we skip to Pro's Recipe mapped to Makers Log -->
+            <section id="whatif" class="section whatif desktop-only" style="display:none;">
+                <!-- Content for WhatIF -->
+            </section>
+
+            <section id="makers-log" class="section pros-recipe desktop-only">
+                <div class="section-header">
+                    <h2>Pro’s Recipe</h2>
+                    <a href="#" class="more-btn">더보기</a>
+                </div>
+                
+                <div class="carousel-container">
+                    <button class="nav-btn prev">‹</button>
+                    <div class="carousel-track">
+                        <!-- Cards (Repeated for scroll effect) -->
+                        <div class="card">
+                            <img src="images/cards/pro1.png" alt="Card 1">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro2.png" alt="Card 2">
+                        </div>
+                        <div class="card active">
+                            <img src="images/cards/pro3.png" alt="Card 3">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro4.png" alt="Card 4">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro5.png" alt="Card 5">
+                        </div>
+                        <!-- Duplicate for scroll feeling -->
+                        <div class="card">
+                            <img src="images/cards/pro1.png" alt="Card 1">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro2.png" alt="Card 2">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro3.png" alt="Card 3">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro4.png" alt="Card 4">
+                        </div>
+                        <div class="card">
+                            <img src="images/cards/pro5.png" alt="Card 5">
+                        </div>
+                    </div>
+                    <button class="nav-btn next">›</button>
+                </div>
+            </section>
+
+            <section id="tech-tock" class="section style-match desktop-only">
+                <div class="section-header">
+                    <h2>Style Match</h2>
+                    <a href="#" class="more-btn">더보기</a>
+                </div>
+                
+                <div class="match-container">
+                    <div class="center-profile">
+                        <div class="profile-img"></div>
+                        <div class="profile-info">
+                            <span class="name">pppbluesky</span>
+                            <span class="desc">자취생 | 20대 중반 | 아침형 인간</span>
+                        </div>
+                    </div>
+                    <!-- Bubbles will be generated by JS -->
+                </div>
+            </section>
+
+            <section id="ai-play" class="section play desktop-only">
+                <div class="section-header">
+                    <h2>PLAY</h2>
+                    <a href="#" class="more-btn">더보기</a>
+                </div>
+                
+                <div class="play-layout">
+                    <!-- Left Scroll Area -->
+                    <div class="play-side left">
+                        <div class="play-item" data-title="더 새로워진,<br>One UI 8의 모든 것" data-img="images/cards/aiplay1.png">
+                            <img src="images/cards/aiplay1.png" alt="Play 1">
+                        </div>
+                        <div class="play-item" data-title="Samsung<br>A S M R" data-img="images/cards/aiplay2.png">
+                            <img src="images/cards/aiplay2.png" alt="Play 2">
+                        </div>
+                        <div class="play-item" data-title="한 손으로<br>어디까지 가능?" data-img="images/cards/aiplay3.png">
+                            <img src="images/cards/aiplay3.png" alt="Play 3">
+                        </div>
+                        <!-- Repeated items -->
+                        <div class="play-item" data-title="더 새로워진,<br>One UI 8의 모든 것" data-img="images/cards/aiplay1.png">
+                            <img src="images/cards/aiplay1.png" alt="Play 1">
+                        </div>
+                        <div class="play-item" data-title="Samsung<br>A S M R" data-img="images/cards/aiplay2.png">
+                            <img src="images/cards/aiplay2.png" alt="Play 2">
+                        </div>
+                    </div>
+
+                    <!-- Center Fixed Area -->
+                    <div class="play-center">
+                        <div class="preview-box">
+                            <div class="default-msg">
+                                click<br>to<br>select
+                            </div>
+                            <img src="" alt="Preview" class="preview-img" style="display:none;">
+                            <div class="preview-info" style="display:none;">
+                                <h3></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Scroll Area -->
+                    <div class="play-side right">
+                        <div class="play-item" data-title="슬림함의 미래, S25<br>얼마나 얇길래" data-img="images/cards/aiplay4.png">
+                            <img src="images/cards/aiplay4.png" alt="Play 4">
+                        </div>
+                        <div class="play-item" data-title="Play Item 5" data-img="images/cards/aiplay5.png">
+                            <img src="images/cards/aiplay5.png" alt="Play 5">
+                        </div>
+                        <div class="play-item" data-title="Play Item 6" data-img="images/cards/aiplay6.png">
+                            <img src="images/cards/aiplay6.png" alt="Play 6">
+                        </div>
+                        <div class="play-item" data-title="Play Item 7" data-img="images/cards/aiplay7.png">
+                            <img src="images/cards/aiplay7.png" alt="Play 7">
+                        </div>
+                        <!-- Repeated items -->
+                        <div class="play-item" data-title="슬림함의 미래, S25<br>얼마나 얇길래" data-img="images/cards/aiplay4.png">
+                            <img src="images/cards/aiplay4.png" alt="Play 4">
+                        </div>
+                        <div class="play-item" data-title="Play Item 5" data-img="images/cards/aiplay5.png">
+                            <img src="images/cards/aiplay5.png" alt="Play 5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Other Pages (Placeholders) -->
+        <div id="page-play" class="page">
+            <!-- Mobile Play View -->
+            <div class="mobile-play-view">
+                <div class="play-bg">
+                    <img src="images/cards/aiplay1.png" alt="Wonderland">
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="play-header-top">
+                    <div class="logo">SAMSUNG</div>
+                    <div class="actions">
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </span>
+                        <span class="icon user-profile">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="play-content-bottom">
+                    <div class="play-info-box">
+                        <div class="app-icon">
+                            <img src="images/ico/image 7147.png" alt="App Icon">
+                        </div>
+                        <div class="text-content">
+                            <h3>원더랜드</h3>
+                            <p>갤럭시만 가능한 귀엽고 신박한 움직이는 케데런<br>더피 배경화면 적용법! 지금 바로 내 갤럭시에 적용<br>해보세요.</p>
+                        </div>
+                    </div>
+                    <button class="action-btn">바로 가기 ↗</button>
+                </div>
+                <div class="play-side-actions">
+                    <div class="action-item">
+                        <span class="icon">💰</span>
+                        <span class="label">+ 50</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="icon">📥</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="icon">❤️</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="icon">💬</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="icon">🔗</span>
+                    </div>
+                </div>
+            </div>
+
+            <section id="play-hero" class="section play-hero desktop-only">
+                <img src="images/hero/heroplay.png" alt="Play Hero">
+            </section>
+
+            <section id="play-intro" class="play-header desktop-only">
+                <h2>Joyful Ways to Unlock Your Galaxy</h2>
+                <p>
+                    친절하고, 정교하게.<br>
+                    더 가까이 움직이는 새로운 '삼성전자'를 만나보세요.<br>
+                    당신의 라이프스타일과 취향을 사랑하는 AI 기능부터<br>
+                    지금 가장 핫한 갤럭시의 기능들을 소개합니다
+                </p>
+            </section>
+
+            <section id="play-techtock" class="play-grid-section desktop-only">
+                <div class="grid-container">
+                    <!-- Row 1 -->
+                    <div class="grid-item"><img src="images/cards/techtock1.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock2.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock3.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock4.png" alt=""></div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid-item"><img src="images/cards/techtock5.png" alt=""></div>
+                    <div class="grid-center">
+                        <h3>Tech Tock</h3>
+                        <p>남들보다 스마트하게,<br>부담없이 가볍게.</p>
+                        <button class="more-pill-btn">더보기</button>
+                    </div>
+                    <div class="grid-item"><img src="images/cards/techtock6.png" alt=""></div>
+                    
+                    <!-- Row 3 -->
+                    <div class="grid-item"><img src="images/cards/techtock7.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock8.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock9.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/techtock10.png" alt=""></div>
+                </div>
+            </section>
+
+            <section id="play-aiplay" class="play-grid-section desktop-only">
+                <div class="grid-container">
+                    <!-- Row 1 -->
+                    <div class="grid-item"><img src="images/cards/aiplay1.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay2.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay3.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay4.png" alt=""></div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid-item"><img src="images/cards/aiplay5.png" alt=""></div>
+                    <div class="grid-center">
+                        <h3>AI PLAY</h3>
+                        <p>끊임없는 발견,<br>무한한 상상력을 소개합니다.</p>
+                        <button class="more-pill-btn">더보기</button>
+                    </div>
+                    <div class="grid-item"><img src="images/cards/aiplay6.png" alt=""></div>
+                    
+                    <!-- Row 3 -->
+                    <div class="grid-item"><img src="images/cards/aiplay7.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay8.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay9.png" alt=""></div>
+                    <div class="grid-item"><img src="images/cards/aiplay10.png" alt=""></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-archive" class="page">
+            <section id="archive-hero" class="section archive-hero">
+                <img src="images/hero/heroarchive.png" alt="Archive Hero">
+            </section>
+
+            <section id="archive-intro" class="archive-header">
+                <h2>Every Secret Samsung Record</h2>
+                <p>
+                    우리가 사랑하는 갤럭시가 완성되기까지,<br>
+                    수없이 많은 고민과 과정이 함께했습니다.<br>
+                    삼성전자의 기록 저장소,<br>
+                    B-Side 아카이브에서 확실하지 않은 것들을 고민하고,<br>
+                    오직 S-Lab에서만 볼 수 있는 삼성의 기록을 공개합니다.
+                </p>
+            </section>
+
+            <section id="archive-list" class="archive-grid-section">
+                <div class="archive-grid">
+                    <!-- Card 1 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive1.png" alt="Archive 1">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>갤럭시의 첫 빛,<br>갤럭시 S의 숨겨진 비밀.</h3>
+                            <p>2010년 3월에 공개된<br>갤럭시 S의 탄생 비화, 그 비하인드 스토리.<br>숨겨진 개발 과정을 공개합니다.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive2.png" alt="Archive 2">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>2011년부터 14년간,<br>지금의 S펜이 세상에 나오기까지.</h3>
+                            <p>S펜의 역사를 돌아보는 시간.<br>혁신적인 기술의 시작,<br>지금의 S펜이 있기까지의 모든 기록.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive3.png" alt="Archive 3">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>5년차 삼성 디자이너의<br>입사 후 최애 데스크테리어</h3>
+                            <p>삼성전자 무선사업부 입사를 꿈꾸는 분들?<br>현직 5년차 디자이너의<br>데스크테리어, 그 리얼 컷을 공개합니다.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive4.png" alt="Archive 4">
+                            <span class="pill-tag">Tech Tock</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>달라진 무드,<br>삼성 버건디 파트의 역사.</h3>
+                            <p>2017년 S8 버건디 레드 컬러부터<br>삼성 폰의 컬러 히스토리,<br>버건디 컬러의 변천사를 확인하세요.</p>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive5.png" alt="Archive 5">
+                            <span class="pill-tag">Tech Tock</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>이젠 케이스의 대명사,<br>삼성 플립 커버의 시작.</h3>
+                            <p>2019년 S10 시리즈와 함께 첫 세상<br>등장이 공식 정품 커버 케이스,<br>내구성과 디자인 두마리 토끼를 잡다.</p>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive6.png" alt="Archive 6">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>스마트폰의 혁신, 플립<br>폴립 디자이너의 스케치 파헤치기</h3>
+                            <p>갤럭시 Z 플립 1 초기 디자인,<br>수없이 깎고 다듬어 도전의 역사.<br>열정 디자이너와의 인터뷰입니다.</p>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive7.png" alt="Archive 7">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>개발자님의 고충,<br>저희가 해결해보겠습니다.</h3>
+                            <p>삼성전자 무선사업부 S/W<br>개발자들의 숨은 고충, 그걸 해결해드리는<br>개발자님, 저 말 잘하죠?</p>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive8.png" alt="Archive 8">
+                            <span class="pill-tag">Tech Tock</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>삼성 C타입 단자,<br>당신이 몰랐던 비밀.</h3>
+                            <p>어느 순간부터 C타입,<br>똑같은 모양, 강력한 성능.<br>충전 단자의 진화와 비밀을 다룹니다.</p>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="archive-card">
+                        <div class="card-img">
+                            <img src="images/cards/archive9.png" alt="Archive 9">
+                            <span class="pill-tag">Makers Log</span>
+                        </div>
+                        <div class="card-text">
+                            <h3>엔지니어님의 어깨,<br>어떤 게 제일 힘드신가요?</h3>
+                            <p>숨은 주역, AS 서비스센터.<br>AS 엔지니어님을 낱낱이 파헤쳐보았습니다.<br>제일 안 꺼지는 어깨(농담입니다)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-container">
+                    <a href="https://www.samsung.com/sec/sustainability/main/" class="more-pill-btn" target="_blank">더보기</a>
+                </div>
+            </section>
+
+            <section id="archive-vote" class="section archive-vote">
+                <div class="vote-container">
+                    <button class="vote-nav-btn prev">‹</button>
+                    
+                    <!-- Left Side -->
+                    <div class="vote-side left">
+                        <div class="vote-header-item">
+                            <span class="label">A. 둥근 삼성</span>
+                            <span class="percent">51.4%</span>
+                        </div>
+                        <div class="vote-progress-bar">
+                            <div class="fill" style="width: 51.4%"></div>
+                        </div>
+                        <div class="vote-card">
+                            <img src="images/cards/s25.png" alt="Round Samsung">
+                            <div class="vote-info">
+                                <h3>둥근 삼성,<br>GALAXY S25 Ultra</h3>
+                                <p>둥근 삼성의 대표작 S24 Ultra.<br>세련되고 부드럽게.</p>
+                                <a href="https://www.samsung.com/sec/smartphones/galaxy-s25-ultra/" class="vote-btn" target="_blank">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center VS -->
+                    <div class="vote-center">
+                        <div class="vs-badge">VS</div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="vote-side right lose">
+                        <div class="vote-header-item">
+                            <span class="percent">49.6%</span>
+                            <span class="label">각진 삼성 .B</span>
+                        </div>
+                        <div class="vote-progress-bar">
+                            <div class="fill" style="width: 49.6%"></div>
+                        </div>
+                        <div class="vote-card">
+                            <img src="images/cards/s24.png" alt="Square Samsung">
+                            <div class="vote-info">
+                                <h3>각진 삼성,<br>GALAXY S24 Ultra</h3>
+                                <p>플랫하고 각진 디자인, S24 Ultra<br>날렵하고 날카롭게.</p>
+                                <a href="https://www.samsung.com/sec/smartphones/galaxy-s24-ultra/" class="vote-btn" target="_blank">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="vote-nav-btn next">›</button>
+                </div>
+                
+                <div class="vote-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-recipe" class="page">
+            <!-- Mobile Recipe View (Style Match) -->
+            <div class="mobile-recipe-view">
+                <div class="mobile-header-top">
+                    <div class="logo">SAMSUNG</div>
+                    <div class="actions">
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                        </span>
+                        <span class="icon user-profile">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="style-match-card">
+                    <div class="card-header-pill">
+                        <span class="icon">🔗</span> 스불재형
+                    </div>
+                    <div class="card-image">
+                        <!-- Placeholder for 3D character image -->
+                        <img src="images/cards/sbul.png" alt="Character">
+                    </div>
+                    <div class="card-info">
+                        <div class="user-name">카레카레님의 루틴 유형은</div>
+                        <h2 class="type-title">스불재형</h2>
+                        <p class="desc">
+                            단발적이고 잦게 루틴을 설정하는 당신! 미룰 수 있을 때까지 미뤘다가 스스로를 닥달하는 게으른 실행파에요.
+                            반복 작업을 자동으로 실행하는 루틴을 통해 심리적 여유를 확보하고 자신의 작업에 몰입할 수 있는 환경을 만들어보는 게 어떨까요?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommend-section">
+                    <h3>추천 루틴</h3>
+                    <p class="sub-desc">나와 유사한 스불재형 사용자들의 루틴이에요</p>
+                    <div class="routine-scroll">
+                        <div class="routine-card">
+                            <div class="card-top">
+                                <span class="icon">💡</span>
+                                <span class="add-icon">⊕</span>
+                            </div>
+                            <h4>알람음악으로 미라클 만들기</h4>
+                            <p>바쁜 아침 일어나기 싫을 때 제대로 눈 뜨게 만...</p>
+                        </div>
+                        <div class="routine-card">
+                            <div class="card-top">
+                                <span class="icon">🔌</span>
+                                <span class="add-icon">⊕</span>
+                            </div>
+                            <h4>충전 완료 알림</h4>
+                            <p>두고가는 일 없이 충전 시작한 버즈에게서 알람...</p>
+                        </div>
+                        <div class="routine-card">
+                            <div class="card-top">
+                                <span class="icon">🔓</span>
+                                <span class="add-icon">⊕</span>
+                            </div>
+                            <h4>잠금 해제 시 자동 실행</h4>
+                            <p>아침에 일어나서 폰을 켜면 자동으로 뉴스...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommend-section">
+                    <h3>추천 제품</h3>
+                    <p class="sub-desc">스불재형 사용자님의 라이프스타일에 어울리는 제품을 모아봤어요</p>
+                    <div class="product-scroll">
+                        <div class="product-item"><img src="images/ico/image 7147.png" alt=""></div>
+                        <div class="product-item"><img src="images/ico/image 7148.png" alt=""></div>
+                        <div class="product-item"><img src="images/ico/image 7149.png" alt=""></div>
+                        <div class="product-item"><img src="images/ico/image 7150.png" alt=""></div>
+                        <div class="product-item"><img src="images/ico/image 7151.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="recipe-hero" class="recipe-hero desktop-only">
+                <img src="images/hero/herorecipe.png" alt="Recipe Hero">
+            </section>
+
+            <section id="recipe-intro" class="recipe-header desktop-only">
+                <h2>Unlock Your True Aesthetic</h2>
+                <p>
+                    갤럭시가 가진 무한한 잠재력은,<br>
+                    당신의 영감을 기다리고 있습니다.<br>
+                    <br>
+                    이제 이 레시피로 당신의 폼을 증명하세요.<br>
+                    세상에 없던 '나만의 갤럭시'를 지금 바로 현실로 FLEX 하세요.
+                </p>
+            </section>
+
+            <section id="recipe-list" class="section recipe-grid-section desktop-only">
+                <div class="section-header">
+                    <h2>Pro's Recipe</h2>
+                </div>
+                <div class="recipe-grid">
+                    <!-- Card 1 -->
+                    <div class="recipe-card">
+                        <div class="card-img">
+                            <img src="images/sec/recip1.png" alt="Interior Tip">
+                        </div>
+                        <div class="card-text">
+                            <h3>삼성 5년차 직원이 알려주는 인테리어 Tip</h3>
+                            <p>삼성직원이 알려주는<br>삼성 가전으로 감각적인 인테리어하는 꿀팁<br>지금 바로 만나보세요</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="recipe-card">
+                        <div class="card-img">
+                            <img src="images/sec/recip2.png" alt="S25 Hidden Features">
+                        </div>
+                        <div class="card-text">
+                            <h3>갤럭시 울트라25의 숨겨진 기능</h3>
+                            <p>몽드락 25, 다들 어떻게 사용하고 계신가요?<br>아무도 알지 못한 숨겨진 기능<br>지금 여기서 공개합니다</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="recipe-card">
+                        <div class="card-img">
+                            <img src="images/sec/recip3.png" alt="Samsung AI">
+                        </div>
+                        <div class="card-text">
+                            <h3>삼성과 AI의 만남</h3>
+                            <p>AI, 다들 어떻게 활용하고 계신가요?<br>갤럭시 유저라면 손쉽게 사용 가능한 기능입니다<br>우리집 강아지부터, 다양한 소품까지 삼성 AI로 변환해보세요</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="recipe-card">
+                        <div class="card-img">
+                            <img src="images/sec/recip4.png" alt="SmartThings">
+                        </div>
+                        <div class="card-text">
+                            <h3>갤럭시, 더 편리하게 사용하는 법</h3>
+                            <p>어찌구저찌구어쩌구저찌구어쩌구저찌구어쩌구저찌구<br>어쩌구저찌구어쩌구저찌구어쩌구저찌구어쩌구저찌구<br>어쩌구저찌구어쩌구저찌구</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recipe-goodlock" class="recipe-goodlock desktop-only">
+                <div class="section-header">
+                    <h2>Good Lock</h2>
+                </div>
+                <div class="goodlock-content">
+                    <img src="images/sec/goodlock.png" alt="Good Lock Pattern" class="goodlock-bg">
+                    <div class="goodlock-text">
+                        <p>전문가들이 완성한 굿락 설계부터 숨겨진 꿀팁까지,<br>이 모든 것이 당신의 창조를 위한 최고의 재료입니다.</p>
+                        <p>갤럭시를 세상에 단 하나뿐인 당신의 작품으로 빚어내세요.<br>당신의 손에서 갤럭시의 잠재력이 완성됩니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recipe-scroll" class="recipe-scroll desktop-only">
+                <div class="scroll-container">
+                    <!-- Row 1: Left Scroll -->
+                    <div class="scroll-row left-scroll">
+                        <div class="scroll-track">
+                            <!-- Original -->
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock1.png" alt="Game Booster+">
+                                <div class="scroll-card-text">
+                                    <h3>Game Booster+</h3>
+                                    <p>게임 카테고리 변경하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock2.png" alt="OHO+">
+                                <div class="scroll-card-text">
+                                    <h3>OHO+</h3>
+                                    <p>핸들 기능의 편리함</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock3.png" alt="NavStar">
+                                <div class="scroll-card-text">
+                                    <h3>NavStar</h3>
+                                    <p>내비게이션 바 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock4.png" alt="Keys Cafe">
+                                <div class="scroll-card-text">
+                                    <h3>Keys Cafe</h3>
+                                    <p>키 배열 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock5.png" alt="Camera Assistant">
+                                <div class="scroll-card-text">
+                                    <h3>Camera Assistant</h3>
+                                    <p>동영상 100배 줌 하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock6.png" alt="Nice shot">
+                                <div class="scroll-card-text">
+                                    <h3>Nice shot</h3>
+                                    <p>편리하게 화면 녹화하는 방법</p>
+                                </div>
+                            </div>
+                            <!-- Duplicate -->
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock1.png" alt="Game Booster+">
+                                <div class="scroll-card-text">
+                                    <h3>Game Booster+</h3>
+                                    <p>게임 카테고리 변경하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock2.png" alt="OHO+">
+                                <div class="scroll-card-text">
+                                    <h3>OHO+</h3>
+                                    <p>핸들 기능의 편리함</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock3.png" alt="NavStar">
+                                <div class="scroll-card-text">
+                                    <h3>NavStar</h3>
+                                    <p>내비게이션 바 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock4.png" alt="Keys Cafe">
+                                <div class="scroll-card-text">
+                                    <h3>Keys Cafe</h3>
+                                    <p>키 배열 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock5.png" alt="Camera Assistant">
+                                <div class="scroll-card-text">
+                                    <h3>Camera Assistant</h3>
+                                    <p>동영상 100배 줌 하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock6.png" alt="Nice shot">
+                                <div class="scroll-card-text">
+                                    <h3>Nice shot</h3>
+                                    <p>편리하게 화면 녹화하는 방법</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Right Scroll -->
+                    <div class="scroll-row right-scroll">
+                        <div class="scroll-track">
+                            <!-- Original -->
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock7.png" alt="Home Up">
+                                <div class="scroll-card-text">
+                                    <h3>Home Up</h3>
+                                    <p>게임 카테고리 변경하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock8.png" alt="Galaxy To Share">
+                                <div class="scroll-card-text">
+                                    <h3>Galaxy To Share</h3>
+                                    <p>내 굿락 설정 공유하기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock9.png" alt="Wonderland">
+                                <div class="scroll-card-text">
+                                    <h3>Wonderland</h3>
+                                    <p>움직이는 배경화면 만들기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock10.png" alt="Dropship">
+                                <div class="scroll-card-text">
+                                    <h3>Dropship</h3>
+                                    <p>편리하게 파일 전송하기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock11.png" alt="Task Changer">
+                                <div class="scroll-card-text">
+                                    <h3>Task Changer</h3>
+                                    <p>화면 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock12.png" alt="Your Galaxy Your Way">
+                                <div class="scroll-card-text">
+                                    <h3>Your Galaxy Your Way</h3>
+                                    <p>굿 락에 대해 더 알아보기</p>
+                                </div>
+                            </div>
+                            <!-- Duplicate -->
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock7.png" alt="Home Up">
+                                <div class="scroll-card-text">
+                                    <h3>Home Up</h3>
+                                    <p>게임 카테고리 변경하는 법</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock8.png" alt="Galaxy To Share">
+                                <div class="scroll-card-text">
+                                    <h3>Galaxy To Share</h3>
+                                    <p>내 굿락 설정 공유하기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock9.png" alt="Wonderland">
+                                <div class="scroll-card-text">
+                                    <h3>Wonderland</h3>
+                                    <p>움직이는 배경화면 만들기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock10.png" alt="Dropship">
+                                <div class="scroll-card-text">
+                                    <h3>Dropship</h3>
+                                    <p>편리하게 파일 전송하기</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock11.png" alt="Task Changer">
+                                <div class="scroll-card-text">
+                                    <h3>Task Changer</h3>
+                                    <p>화면 커스터마이징 꿀팁</p>
+                                </div>
+                            </div>
+                            <div class="scroll-card">
+                                <img src="images/cards/goodlock12.png" alt="Your Galaxy Your Way">
+                                <div class="scroll-card-text">
+                                    <h3>Your Galaxy Your Way</h3>
+                                    <p>굿 락에 대해 더 알아보기</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-space" class="page">
+            <section class="section">
+                <div class="section-header">
+                    <h2>SPACE Page</h2>
+                </div>
+                <div style="padding: 100px; text-align: center;">
+                    <p>Space content goes here...</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-mypage" class="page">
+            <section class="section">
+                <div class="section-header">
+                    <h2>My Page</h2>
+                </div>
+                <div style="padding: 100px; text-align: center;">
+                    <p>마이페이지 준비 중입니다.</p>
+                </div>
+            </section>
+        </div>
+    </main>    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">서비스 이용약관</a>
+                <a href="#">커뮤니티 이용약관</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">이벤트 개인정보 처리 방침</a>
+            </div>
+            <div class="footer-info">
+                <p>삼성전자 주식회사</p>
+                <p>대표이사 이재용 | 사업자등록번호 123-45-67890</p>
+                <p>Copyright © 1995-2025 Samsung. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hover Card Template (Moved to body for fixed positioning) -->
+    <div id="hover-card" class="hover-card">
+        <div class="card-header">
+            <div class="profile-pic"></div>
+            <div class="user-info">
+                <div class="name-row">
+                    <span class="username">pppbluesky</span>
+                    <button class="follow-btn">팔로우</button>
+                </div>
+                <div class="user-meta">자취생 | 20대 중반 | 아침형 인간</div>
+            </div>
+        </div>
+        <div class="card-icons">
+            <div class="c-icon"><img src="images/ico/image 7147.png" alt="Mobile"></div>
+            <div class="c-icon active"><img src="images/ico/image 7148.png" alt="Tree"></div>
+            <div class="c-icon active"><img src="images/ico/image 7149.png" alt="Bulb"></div>
+            <div class="c-icon"><img src="images/ico/image 7150.png" alt="Monitor"></div>
+            <div class="c-icon"><img src="images/ico/image 7151.png" alt="Washer"></div>
+            <div class="c-icon"><img src="images/ico/image 7152.png" alt="Watch"></div>
+        </div>
+        <div class="card-bottom">
+            <div class="bottom-item">
+                <div class="b-icon">🪩</div>
+                <div class="b-text">
+                    <strong>알람음악으로 미러볼 만들기</strong>
+                    <span>바쁜 아침 일어나기 싫을 때 제대로 눈 뜨게 만...</span>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+            <div class="bottom-item">
+                <div class="b-icon">⛅</div>
+                <div class="b-text">
+                    <strong>조명으로 날씨 알림 루틴</strong>
+                    <span>항상 까먹는 게 날씨인지라 심심하지 않게...</span>
+                </div>
+                <button class="add-btn">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="#" class="nav-item active" data-page="home">
+            <img src="images/ico/home.png" alt="Home" class="nav-icon">
+            <span>홈</span>
+        </a>
+        <a href="#" class="nav-item" data-page="play">
+            <img src="images/ico/play.png" alt="Play" class="nav-icon">
+            <span>PLAY</span>
+        </a>
+        <a href="#" class="nav-item disabled">
+            <img src="images/ico/archive.png" alt="Archive" class="nav-icon">
+            <span>ARCHIVE</span>
+        </a>
+        <a href="#" class="nav-item" data-page="recipe">
+            <img src="images/ico/recipe.png" alt="Recipe" class="nav-icon">
+            <span>RECIPE</span>
+        </a>
+        <a href="#" class="nav-item disabled">
+            <img src="images/ico/my.png" alt="My Page" class="nav-icon">
+            <span>마이페이지</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
