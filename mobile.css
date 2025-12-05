@@ -630,5 +630,306 @@
 .recipe-grid {
     grid-template-columns: 1fr;
 }
+
+/* Mobile Recipe View Horizontal Scroll */
+.mobile-recipe-view {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: #000;
+}
+
+.recipe-horizontal-scroll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.recipe-section-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 80px; /* Bottom nav space */
+    box-sizing: border-box;
+}
+
+.recipe-header-top {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.recipe-content-placeholder {
+    padding: 20px;
+    color: white;
+}
+
+.recipe-content-placeholder h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.recipe-content-placeholder p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.recipe-card-dummy {
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.recipe-card-dummy img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card-dummy p {
+    padding: 15px;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    animation: bounceRight 2s infinite;
+}
+
+@keyframes bounceRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+/* Wallpaper Creator Styles (Scoped to Recipe) */
+.wallpaper-creator-container {
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.creator-header {
+    margin-bottom: 40px;
+}
+
+.creator-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.creator-header p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.step-section {
+    margin-bottom: 32px;
+}
+
+.step-section h3 {
+    font-size: 16px;
+    color: #eee;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.style-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.style-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.style-pill.active {
+    background: white;
+    color: black;
+    border-color: white;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-wrapper input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 8px 0;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: #888;
+}
+
+.generate-btn {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.generate-btn:not(:disabled) {
+    opacity: 1;
+}
+
+/* Loading Overlay - Fixed to fill screen */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-content video {
+    margin-bottom: 16px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.loading-content p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Result View - Fixed to fill screen */
+.result-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #000;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.result-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 9/16;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.result-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-result-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.result-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.download-btn {
+    background: white;
+    color: black;
+}
+
+.retry-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 }
 

@@ -322,10 +322,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('mobile-search-btn');
     
     // Base64 Encoded API Key
-    const ENCODED_KEY = 'c2stcHJvai1tWTEtTGFHZ25OQWxTdV9XcGVsNTRUbUpoQkY5TXFjTzFUY0NCaVNXeWR0WklYdENIMGVaaGJmcko3eWhQbXNRRzV6YzBEZVRkYVQzQmxia0ZKTUExSUZCdVZQZzdFYlNhc0FmLThFWW1fRWFheGltZ2R2ZzZDdVd5V3hUNGx1VEY1M0xseE9uNHVPTnJSYkdqcEpfSDVmZElmSUE=';
+    const OPENAI_ENCODED_KEY = 'c2stcHJvai1tWTEtTGFHZ25OQWxTdV9XcGVsNTRUbUpoQkY5TXFjTzFUY0NCaVNXeWR0WklYdENIMGVaaGJmcko3eWhQbXNRRzV6YzBEZVRkYVQzQmxia0ZKTUExSUZCdVZQZzdFYlNhc0FmLThFWW1fRWFheGltZ2R2ZzZDdVd5V3hUNGx1VEY1M0xseE9uNHVPTnJSYkdqcEpfSDVmZElmSUE=';
     
     // Decode API Key
-    const OPENAI_API_KEY = atob(ENCODED_KEY);
+    const OPENAI_API_KEY = atob(OPENAI_ENCODED_KEY);
 
     const performSearch = async () => {
         const query = searchInput.value.trim();
@@ -395,6 +395,148 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') {
                 performSearch();
             }
+        });
+    }
+
+    // Wallpaper Creator Logic
+    const stylePills = document.querySelectorAll('.style-pill');
+    const inputSection = document.querySelector('.input-section');
+    const promptInput = document.getElementById('wallpaper-prompt');
+    const generateBtn = document.getElementById('generate-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const resultView = document.getElementById('result-view');
+    const generatedImage = document.getElementById('generated-image');
+    const closeResultBtn = document.querySelector('.close-result-btn');
+    const retryBtn = document.querySelector('.retry-btn');
+    const downloadBtn = document.querySelector('.download-btn');
+
+    let selectedStyle = '';
+    
+    // Base64 encoded API Key
+    const GEMINI_ENCODED_KEY = 'QUl6YVN5Q2pGY29OeVVsT2FMOUNFQXZJV3RqNm9UdUxRbFJQakFJ';
+    const GEMINI_API_KEY = atob(GEMINI_ENCODED_KEY);
+
+    if (stylePills.length > 0) {
+        stylePills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                // Remove active class from all
+                stylePills.forEach(p => p.classList.remove('active'));
+                // Add to clicked
+                pill.classList.add('active');
+                selectedStyle = pill.dataset.style;
+                
+                // Show input section
+                inputSection.style.display = 'block';
+                
+                // Focus input
+                setTimeout(() => {
+                    promptInput.focus();
+                }, 100);
+            });
+        });
+    }
+
+    if (promptInput) {
+        promptInput.addEventListener('input', () => {
+            if (promptInput.value.trim().length > 0) {
+                generateBtn.removeAttribute('disabled');
+                generateBtn.style.opacity = '1';
+            } else {
+                generateBtn.setAttribute('disabled', 'true');
+                generateBtn.style.opacity = '0.5';
+            }
+        });
+    }
+
+    if (generateBtn) {
+        generateBtn.addEventListener('click', async () => {
+            if (!selectedStyle || !promptInput.value.trim()) return;
+
+            const userPrompt = promptInput.value.trim();
+            
+            // Show loading
+            loadingOverlay.style.display = 'flex';
+            
+            try {
+                // Call OpenAI DALL-E API
+                const response = await fetch('https://api.openai.com/v1/images/generations', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: "dall-e-3",
+                        prompt: `Mobile wallpaper, ${selectedStyle} style. ${userPrompt}. High quality, vertical aspect ratio 9:16.`,
+                        n: 1,
+                        size: "1024x1792",
+                        response_format: "b64_json"
+                    })
+                });
+
+                const data = await response.json();
+                console.log('DALL-E Response:', data);
+
+                // Handle API Error Response
+                if (data.error) {
+                    throw new Error(data.error.message || 'API Error');
+                }
+
+                if (data.data && data.data.length > 0) {
+                    const image = data.data[0];
+                    if (image.b64_json) {
+                        generatedImage.src = `data:image/png;base64,${image.b64_json}`;
+                    } else if (image.url) {
+                        generatedImage.src = image.url;
+                    }
+                    
+                    // Hide loading and show result
+                    loadingOverlay.style.display = 'none';
+                    resultView.style.display = 'flex';
+                } else {
+                    throw new Error('No image data found in response');
+                }
+
+            } catch (error) {
+                console.error('Error generating wallpaper:', error);
+                loadingOverlay.style.display = 'none';
+                
+                if (error.message.includes('quota') || error.message.includes('429') || error.message.includes('RESOURCE_EXHAUSTED')) {
+                    alert('API 요청 한도를 초과했습니다. 잠시 후 다시 시도해주세요.');
+                } else {
+                    alert(`배경화면 생성 중 오류가 발생했습니다: ${error.message}`);
+                }
+            }
+        });
+    }
+
+    if (closeResultBtn) {
+        closeResultBtn.addEventListener('click', () => {
+            resultView.style.display = 'none';
+        });
+    }
+
+    if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+            resultView.style.display = 'none';
+            promptInput.value = '';
+            generateBtn.setAttribute('disabled', 'true');
+            generateBtn.style.opacity = '0.5';
+            inputSection.style.display = 'none';
+            stylePills.forEach(p => p.classList.remove('active'));
+            selectedStyle = '';
+        });
+    }
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            // Mock download
+            const link = document.createElement('a');
+            link.href = generatedImage.src;
+            link.download = `galaxy-wallpaper-${Date.now()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
 });
